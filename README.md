@@ -26,6 +26,8 @@ Run them in order. Each one stands alone but builds on the previous concept.
 | 06 | [Whisper Basics](notebooks/06_whisper_basics.ipynb) | Multilingual STT with faster-whisper, word timestamps | §6.3 |
 | 07 | [Code-Switching Deep Dive](notebooks/07_codeswitching.ipynb) | Mixed Chinese/English speech: failure modes & fixes | §6.3 |
 | 08 | [Voice Agent](notebooks/08_voice_agent.ipynb) | Sequential STT→LLM→TTS pipeline + latency budget | §6.1, §6.2 |
+| 09 | [Video Indexing](notebooks/09_video_indexing.ipynb) | Frame + audio dual index over YouTube/B站 talks | §8.1 |
+| 10 | [Native vs DIY Video](notebooks/10_video_native_compare.ipynb) | Gemini long-context vs frame-sampling pipeline | §8.2 |
 
 ## Setup
 
@@ -44,11 +46,13 @@ pip install -r requirements.txt
 
 ```bash
 # macOS
-brew install poppler tesseract tesseract-lang
+brew install poppler tesseract tesseract-lang ffmpeg
 
 # Ubuntu/Debian
-sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-chi-sim tesseract-ocr-jpn
+sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-chi-sim tesseract-ocr-jpn ffmpeg
 ```
+
+`ffmpeg` is needed for nb09 / nb10 (video frame + audio extraction).
 
 ### 3. API keys
 

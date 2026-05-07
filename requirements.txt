@@ -28,3 +28,6 @@ pytesseract>=0.3.10  # needs `tesseract` + lang packs installed at OS level
 faster-whisper>=1.0.0   # CTranslate2-quantized Whisper, fast on CPU
 soundfile>=0.12.1
 jiwer>=3.0.4            # CER / WER metrics for nb07
+
+# Video — Phase 4
+yt-dlp>=2024.10.0       # downloads from YouTube + Bilibili (and many others)
