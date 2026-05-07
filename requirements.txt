@@ -1,0 +1,22 @@
+# Core
+python-dotenv>=1.0.0
+jupyter>=1.0.0
+ipykernel>=6.29.0
+
+# Image / PDF handling
+Pillow>=10.0.0
+pdf2image>=1.17.0    # needs poppler installed at the OS level
+matplotlib>=3.8.0
+
+# ML / Embeddings
+torch>=2.2.0
+transformers>=4.45.0
+sentence-transformers>=3.0.0   # easy CLIP wrapper for nb 02
+colpali-engine>=0.3.4          # ColPali model + processor
+
+# Vector search (small, in-memory for the lab — production would use Milvus/Vespa)
+numpy>=1.26.0
+
+# VLM API
+openai>=1.40.0
+pydantic>=2.5.0

@@ -1,0 +1,27 @@
+# env
+.env
+.venv/
+venv/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# notebook outputs (keep notebooks clean for git diffs)
+# students will regenerate outputs locally
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# data — keep folder structure, not student PDFs
+data/sample_pdfs/*
+!data/sample_pdfs/.gitkeep
+
+# model cache
+.cache/
+*.pt
+*.bin
