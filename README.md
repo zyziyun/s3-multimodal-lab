@@ -65,6 +65,22 @@ cp .env.example .env
 
 Drop any PDF you want to chat with into `data/sample_pdfs/`. A chart-heavy one (financial report, paper with figures, technical slide deck) shows ColPali's strengths most clearly.
 
+## Sanity tests
+
+Pure-Python utilities used across the notebooks (image-token math, text
+normalization, MaxSim, RRF) are extracted into the `s3lab/` package and
+covered by a fast pytest suite. CI runs them on every push.
+
+```bash
+pip install pytest numpy
+pytest
+```
+
+The suite also validates that every notebook is parseable JSON, starts
+with an H1, has at least one code cell, and has no committed outputs
+(outputs bloat diffs and leak data). It does **not** require API keys
+or GPU — runs in well under a second.
+
 ## Hardware notes
 
 - **Notebooks 01, 02, 04** run fine on CPU.

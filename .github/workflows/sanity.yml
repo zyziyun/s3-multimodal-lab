@@ -1,0 +1,22 @@
+name: sanity tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install lightweight test deps
+        # We deliberately avoid the heavy ML deps (torch, transformers,
+        # colpali-engine, faster-whisper) — sanity tests only exercise the
+        # pure-Python s3lab utilities and notebook structure.
+        run: pip install pytest numpy
+      - name: Run sanity tests
+        run: pytest

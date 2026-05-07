@@ -32,3 +32,6 @@ jiwer>=3.0.4            # CER / WER metrics for nb07
 # Video — Phase 4
 yt-dlp>=2024.10.0       # downloads from YouTube + Bilibili (and many others)
 google-genai>=0.3.0     # nb10 Gemini native-video comparison (optional)
+
+# Sanity tests
+pytest>=7.0.0
