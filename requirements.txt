@@ -23,3 +23,7 @@ pydantic>=2.5.0
 
 # Multilingual baseline (nb05)
 pytesseract>=0.3.10  # needs `tesseract` + lang packs installed at OS level
+
+# Voice — Phase 3
+faster-whisper>=1.0.0   # CTranslate2-quantized Whisper, fast on CPU
+soundfile>=0.12.1

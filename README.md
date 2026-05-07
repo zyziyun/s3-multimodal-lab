@@ -23,6 +23,9 @@ Run them in order. Each one stands alone but builds on the previous concept.
 | 03 | [ColPali Visual RAG](notebooks/03_colpali_visual_rag.ipynb) | Late interaction, MaxSim, end-to-end visual document RAG | §4.3, §5.3 |
 | 04 | [Grounded Generation](notebooks/04_grounded_generation.ipynb) | Strict schema, visual evidence, hallucination mitigation | §7 |
 | 05 | [Multilingual Visual RAG](notebooks/05_multilingual_visual_rag.ipynb) | Why ColPali beats OCR on Chinese/Japanese PDFs | §4.3 |
+| 06 | [Whisper Basics](notebooks/06_whisper_basics.ipynb) | Multilingual STT with faster-whisper, word timestamps | §6.3 |
+| 07 | [Code-Switching Deep Dive](notebooks/07_codeswitching.ipynb) | Mixed Chinese/English speech: failure modes & fixes | §6.3 |
+| 08 | [Voice Agent](notebooks/08_voice_agent.ipynb) | Sequential STT→LLM→TTS pipeline + latency budget | §6.1, §6.2 |
 
 ## Setup
 

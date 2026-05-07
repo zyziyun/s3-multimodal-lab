@@ -17,9 +17,13 @@ __pycache__/
 .idea/
 .vscode/
 
-# data — keep folder structure, not student PDFs
+# data — keep folder structure, not student PDFs / audio
 data/sample_pdfs/*
 !data/sample_pdfs/.gitkeep
+data/audio_samples/*
+!data/audio_samples/.gitkeep
+data/video_samples/*
+!data/video_samples/.gitkeep
 
 # model cache
 .cache/
