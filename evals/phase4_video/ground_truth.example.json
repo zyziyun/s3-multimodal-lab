@@ -1,0 +1,13 @@
+{
+  "phase": "phase4_video",
+  "description": "Template — edit `video` and `queries` for your own video, save as ground_truth.json (without `.example`).",
+  "video": "data/video_samples/lecture.mp4",
+  "queries": [
+    {"q": "introduction", "timestamp_s": 5,   "tolerance_s": 15},
+    {"q": "main results", "timestamp_s": 180, "tolerance_s": 30},
+    {"q": "conclusion",   "timestamp_s": 300, "tolerance_s": 30}
+  ],
+  "thresholds": {
+    "min_hit_rate": 0.66
+  }
+}

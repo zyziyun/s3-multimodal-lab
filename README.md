@@ -83,6 +83,18 @@ with an H1, has at least one code cell, and has no committed outputs
 (outputs bloat diffs and leak data). It does **not** require API keys
 or GPU — runs in well under a second.
 
+## Eval suite
+
+For *quality* regression testing (slower, needs the heavy models), see
+[`evals/README.md`](evals/README.md). One self-contained eval (Phase 3
+code-switching) runs end-to-end with just `OPENAI_API_KEY`; the others
+are templates that point at your own PDF / video.
+
+```bash
+python evals/phase3_codeswitch/run.py    # ~3 minutes, prints + saves report
+python evals/run_all.py                  # everything available
+```
+
 ## Hardware notes
 
 - **Notebooks 01, 02, 04** run fine on CPU.

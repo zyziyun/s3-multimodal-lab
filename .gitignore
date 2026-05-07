@@ -29,3 +29,9 @@ data/video_samples/*
 .cache/
 *.pt
 *.bin
+
+# eval outputs and user-supplied ground truth
+evals/reports/
+evals/*/ground_truth.json
+# Phase 3 ground truth is committed (self-contained, references no user data)
+!evals/phase3_codeswitch/ground_truth.json

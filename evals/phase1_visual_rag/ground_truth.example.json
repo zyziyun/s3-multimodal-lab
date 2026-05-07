@@ -1,0 +1,17 @@
+{
+  "phase": "phase1_visual_rag",
+  "description": "Template — edit `pdf` and `queries` for your own document, save as ground_truth.json (without `.example`).",
+  "pdf": "data/sample_pdfs/example.pdf",
+  "max_pages": 30,
+  "queries": [
+    {"q": "table of contents",        "expected_pages": [1, 2]},
+    {"q": "revenue trend chart",      "expected_pages": [12]},
+    {"q": "research and development", "expected_pages": [7, 8]}
+  ],
+  "metrics": {
+    "recall_at_k": [1, 3, 5]
+  },
+  "thresholds": {
+    "min_recall_at_3": 0.66
+  }
+}

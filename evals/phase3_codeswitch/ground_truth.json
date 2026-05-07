@@ -1,0 +1,40 @@
+{
+  "phase": "phase3_codeswitch",
+  "description": "Five Chinese-English code-switched samples from nb07. TTS-generated, fully self-contained.",
+  "samples": [
+    {
+      "id": "cs1_standup",
+      "text": "明天的 standup 我们 review 一下 Q3 的 OKR，然后 sync 一下 backlog。",
+      "expected_english": ["standup", "review", "Q3", "OKR", "sync", "backlog"]
+    },
+    {
+      "id": "cs2_codereview",
+      "text": "这个 function 的 time complexity 是 O of n squared，需要 optimize 成 O of n log n。",
+      "expected_english": ["function", "time", "complexity", "optimize"]
+    },
+    {
+      "id": "cs3_meeting",
+      "text": "我们 schedule 一个 sync，把 deliverables 和 timeline 都 align 一下。",
+      "expected_english": ["schedule", "sync", "deliverables", "timeline", "align"]
+    },
+    {
+      "id": "cs4_casual",
+      "text": "这个 weekend 我们 grab 个 coffee 然后 hang out 一下吧。",
+      "expected_english": ["weekend", "grab", "coffee", "hang", "out"]
+    },
+    {
+      "id": "cs5_reverse",
+      "text": "Let's discuss the 重点 of this 项目, then we'll align on the 方案。",
+      "expected_english": ["Let", "discuss", "of", "this", "then", "we", "align", "on", "the"]
+    }
+  ],
+  "strategies_under_test": ["A_vanilla", "B_biased", "C_vad"],
+  "thresholds": {
+    "min_avg_en_recall_for_pass": 0.50,
+    "max_avg_cer_for_pass": 0.40
+  },
+  "notes": [
+    "TTS-generated audio is unrealistically clean; expect real recordings to be 2-4x harder.",
+    "Strategy mix from nb07: A=defaults, B=force lang=zh + glossary in initial_prompt, C=VAD chunking + per-chunk language redetection."
+  ]
+}
