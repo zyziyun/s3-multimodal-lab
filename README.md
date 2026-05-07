@@ -28,6 +28,8 @@ Run them in order. Each one stands alone but builds on the previous concept.
 | 08 | [Voice Agent](notebooks/08_voice_agent.ipynb) | Sequential STT→LLM→TTS pipeline + latency budget | §6.1, §6.2 |
 | 09 | [Video Indexing](notebooks/09_video_indexing.ipynb) | Frame + audio dual index over YouTube/B站 talks | §8.1 |
 | 10 | [Native vs DIY Video](notebooks/10_video_native_compare.ipynb) | Gemini long-context vs frame-sampling pipeline | §8.2 |
+| 11 | [Speech-to-Speech](notebooks/11_speech_to_speech.ipynb) | GPT-4o Realtime vs sequential pipeline (nb08) | §6.4 |
+| 12 | [Capstone Agent](notebooks/12_capstone_agent.ipynb) | Voice-driven Visual RAG: Whisper → ColPali → grounded → TTS | end-to-end |
 
 ## Setup
 
