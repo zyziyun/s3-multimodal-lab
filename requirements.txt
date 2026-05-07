@@ -20,3 +20,6 @@ numpy>=1.26.0
 # VLM API
 openai>=1.40.0
 pydantic>=2.5.0
+
+# Multilingual baseline (nb05)
+pytesseract>=0.3.10  # needs `tesseract` + lang packs installed at OS level

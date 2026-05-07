@@ -22,6 +22,7 @@ Run them in order. Each one stands alone but builds on the previous concept.
 | 02 | [CLIP Text→Image Search](notebooks/02_clip_text_to_image_search.ipynb) | Multimodal embeddings, contrastive learning, the modality gap | §4.1, §4.2 |
 | 03 | [ColPali Visual RAG](notebooks/03_colpali_visual_rag.ipynb) | Late interaction, MaxSim, end-to-end visual document RAG | §4.3, §5.3 |
 | 04 | [Grounded Generation](notebooks/04_grounded_generation.ipynb) | Strict schema, visual evidence, hallucination mitigation | §7 |
+| 05 | [Multilingual Visual RAG](notebooks/05_multilingual_visual_rag.ipynb) | Why ColPali beats OCR on Chinese/Japanese PDFs | §4.3 |
 
 ## Setup
 
@@ -34,16 +35,16 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. System dependency for PDF rendering
+### 2. System dependencies
 
-Notebook 03 renders PDF pages to images using `pdf2image`, which needs `poppler`:
+`pdf2image` needs `poppler`. Notebook 05 also needs `tesseract` with Chinese & Japanese language packs for the OCR baseline.
 
 ```bash
 # macOS
-brew install poppler
+brew install poppler tesseract tesseract-lang
 
 # Ubuntu/Debian
-sudo apt-get install -y poppler-utils
+sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-chi-sim tesseract-ocr-jpn
 ```
 
 ### 3. API keys
