@@ -1,5 +1,7 @@
 # S3 Multimodal Lab — Visual RAG with ColPali
 
+[![sanity tests](https://github.com/zyziyun/s3-multimodal-lab/actions/workflows/sanity.yml/badge.svg)](https://github.com/zyziyun/s3-multimodal-lab/actions/workflows/sanity.yml)
+
 A small, hands-on lab that walks through modern multimodal AI by **building a Visual RAG system that can chat with chart-heavy PDFs**.
 
 By the end, you will have built a pipeline that takes a PDF (financial report, research paper, slides), indexes every page **as an image** using ColPali, and answers questions like *"what was Q3 revenue?"* by retrieving the right page and feeding it to GPT-4o.
