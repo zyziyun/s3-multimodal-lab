@@ -1,14 +1,38 @@
-# S3 Multimodal Lab — Visual RAG with ColPali
+# S3 Multimodal Lab — Visual RAG · Voice · Video
 
 [![sanity tests](https://github.com/zyziyun/s3-multimodal-lab/actions/workflows/sanity.yml/badge.svg)](https://github.com/zyziyun/s3-multimodal-lab/actions/workflows/sanity.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Notebooks](https://img.shields.io/badge/notebooks-12-blue)](notebooks)
+[![Phases](https://img.shields.io/badge/phases-4-purple)](#notebooks)
 
-A small, hands-on lab that walks through modern multimodal AI by **building a Visual RAG system that can chat with chart-heavy PDFs**.
+> **A production-grade, step-by-step lab for modern multimodal AI.** 12 Jupyter notebooks that walk you from "how does a VLM see an image?" all the way to a voice-driven Visual RAG agent that chats with chart-heavy PDFs in Chinese, English, or both.
 
-By the end, you will have built a pipeline that takes a PDF (financial report, research paper, slides), indexes every page **as an image** using ColPali, and answers questions like *"what was Q3 revenue?"* by retrieving the right page and feeding it to GPT-4o.
+## What you'll build
 
-This is the architecture behind 2025-era document AI products. No OCR. No layout-destroying chunking. Just visual patches in, grounded answers out.
+```mermaid
+flowchart LR
+    A[Voice query<br/>any language] --> B[Whisper STT<br/>code-switching aware]
+    B --> C[ColPali<br/>~1024 patches/page]
+    P[PDF pages] --> C
+    C --> D[top-K pages]
+    D --> E[GPT-4o<br/>strict schema<br/>+ visual_evidence]
+    E --> F{Confidence<br/>gate}
+    F -->|≥ 0.4| G[TTS]
+    F -->|< 0.4| R[Refuse]
+    G --> H[Voice reply]
+```
 
-## Why this lab?
+Every defensive design choice — strict schema, visual-evidence grounding, confidence gates, VAD chunking, glossary biasing, RRF fusion — is motivated, implemented, **and tested**.
+
+## Highlights
+
+- **No OCR**: ColPali treats each PDF page as an image, keeps all ~1024 patch vectors per page, and uses MaxSim late interaction so query tokens match *specific* chart bars / table cells / figure captions. The 2024–2025 paradigm shift in document RAG.
+- **Chinese ↔ English code-switching**: dedicated notebook with a 5-sample eval set, two metrics (CER + English-word recall), and three measured mitigation strategies (force language + glossary biasing, VAD chunking, vanilla).
+- **Real voice agent**: faster-whisper → GPT-4o (with tool calls) → OpenAI TTS, both sync and streaming. Plus a side-by-side **GPT-4o Realtime** comparison so you can hear the prosody gap.
+- **Dual-index video search**: ffmpeg → CLIP frames + Whisper segments → Reciprocal Rank Fusion. Searches a YouTube / B站 lecture by natural language, returns timestamps. Compared head-to-head against Gemini long-context native video.
+- **Engineered, not just demoed**: a `s3lab/` package with the canonical pure-Python utilities, 95 pytest sanity assertions running in CI, and a per-phase `evals/` harness with ground truth + pass/fail thresholds.
+
+## Why this lab exists
 
 Traditional RAG over PDFs goes `parse → OCR → chunk → embed → search`. That pipeline destroys charts, tables, equations, figures — exactly the parts of a technical document that carry the most information.
 
