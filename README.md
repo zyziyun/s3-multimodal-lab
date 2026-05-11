@@ -7,6 +7,8 @@
 
 > **A production-grade, step-by-step lab for modern multimodal AI.** 12 Jupyter notebooks that walk you from "how does a VLM see an image?" all the way to a voice-driven Visual RAG agent that chats with chart-heavy PDFs in Chinese, English, or both.
 
+🚀 **Live demo:** see [`space/DEPLOY.md`](space/DEPLOY.md) to host the Visual-RAG core (nb03 + nb04) on a free Hugging Face ZeroGPU Space in under five minutes.
+
 ## What you'll build
 
 ```mermaid
